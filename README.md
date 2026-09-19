@@ -83,6 +83,42 @@ By focusing on **linked lists** (for dynamic insertion/deletion) and **recursion
   - Remove any debugging prints or stale branches.  
   - Ensure your `.gitignore` is updated to exclude unnecessary files.
 
+## How to Run
+
+From the project root:
+
+```bash
+python3 main.py
+```
+
+Expected output:
+
+```
+Initial roster:
+103 -> 102 -> 101 -> 104 -> None
+Sum of all IDs: 410
+Search for 102: True
+Search for 999: False
+Reversed roster:
+104 -> 101 -> 102 -> 103 -> None
+```
+
+`main.py` builds a sample employee-ID roster, then prints the list, the recursive sum, two search results, and the reversed list.
+
+## How to Test
+
+```bash
+python3 -m unittest tests.test_linked_list -v
+```
+
+All five tests should pass: insert at front, empty-list sum, populated-list sum, search, and in-place reverse.
+
+## Interpreting Results
+
+- **Sum** walks every node and adds `data`. An empty list returns `0`.
+- **Search** returns `True` only when a node's `data` matches the target.
+- **Reverse** rewires each `next` pointer in place and updates `head`.
+
 ## Submission
 Once the lab is complete, all tests are passing, and you've pushed the completed code to 
 your forked repo on GitHub, submit your GitHub repo through Canvas using CodeGrade.
